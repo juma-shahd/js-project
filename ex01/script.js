@@ -1,4 +1,5 @@
-function calculateGrade(score) {
+function calculateGrade(score)
+ {
     if (typeof score !== "number" || score < 0 || score > 100) {
         return "Invalid score";
     }
@@ -22,3 +23,24 @@ console.log(calculateGrade(50));
 console.log(calculateGrade(150));
 console.log(calculateGrade(-5));
 console.log(calculateGrade("hello"));
+function checkAccess(age, hasTicket) {
+    if (age >= 18 && hasTicket === true) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+console.log(checkAccess(20, true));
+console.log(checkAccess(15, true));
+console.log(checkAccess(20, false));
+console.log("--- Grade boundaries ---");
+console.log(calculateGrade(100));
+console.log(calculateGrade(90));
+console.log(calculateGrade(89));
+console.log(calculateGrade(0));
+console.log(calculateGrade(101));
+
+console.log("--- Access boundaries ---");
+console.log(checkAccess(18, true));
+console.log(checkAccess(17, true));
