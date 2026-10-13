@@ -6,6 +6,6 @@ console.log("Welcome, " + name + "!");
 age++;
 console.log("Next year I will be " + age);
 
-console.log(typeof name);
-console.log(typeof age);
-console.log(typeof isCoding);
+console.log("name is a " + typeof name);
+console.log("age is a " + typeof age);
+console.log("isCoding is a " + typeof isCoding);
