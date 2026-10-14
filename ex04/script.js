@@ -17,7 +17,12 @@ function addTask() {
     }
 
     const li = document.createElement("li");
-    li.textContent = text;
+
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+
+    const span = document.createElement("span");
+    span.textContent = text;
 
     const deleteBtn = document.createElement("button");
     deleteBtn.textContent = "Delete";
@@ -30,12 +35,12 @@ function addTask() {
 
     deleteBtn.addEventListener("click", handleDelete);
 
-    function handleComplete() {
-        li.classList.toggle("completed");
-    }
+    checkbox.addEventListener("change", function () {
+        li.classList.toggle("completed", checkbox.checked);
+    });
 
-    li.addEventListener("click", handleComplete);
-
+    li.appendChild(checkbox);
+    li.appendChild(span);
     li.appendChild(deleteBtn);
     taskList.appendChild(li);
 
