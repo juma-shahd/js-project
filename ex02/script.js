@@ -7,3 +7,6 @@ title.textContent = "New title from JavaScript!";
 message.textContent = "This text was changed live!";
 title.style.color = "royalblue";
 message.classList.add("active");
+message.addEventListener("click", function () {
+    message.classList.toggle("active");
+});
