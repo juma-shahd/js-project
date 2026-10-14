@@ -1,5 +1,6 @@
-function calculateGrade(score)
- {
+// ===== Functions =====
+
+function calculateGrade(score) {
     if (typeof score !== "number" || score < 0 || score > 100) {
         return "Invalid score";
     }
@@ -17,12 +18,6 @@ function calculateGrade(score)
     }
 }
 
-console.log(calculateGrade(95));
-console.log(calculateGrade(85));
-console.log(calculateGrade(50));
-console.log(calculateGrade(150));
-console.log(calculateGrade(-5));
-console.log(calculateGrade("hello"));
 function checkAccess(age, hasTicket) {
     if (age >= 18 && hasTicket === true) {
         return true;
@@ -31,16 +26,18 @@ function checkAccess(age, hasTicket) {
     }
 }
 
-console.log(checkAccess(20, true));
-console.log(checkAccess(15, true));
-console.log(checkAccess(20, false));
-console.log("--- Grade boundaries ---");
-console.log(calculateGrade(100));
-console.log(calculateGrade(90));
-console.log(calculateGrade(89));
-console.log(calculateGrade(0));
-console.log(calculateGrade(101));
+// ===== Tests =====
 
-console.log("--- Access boundaries ---");
-console.log(checkAccess(18, true));
-console.log(checkAccess(17, true));
+console.log("--- calculateGrade ---");
+console.log("100 → " + calculateGrade(100));
+console.log("90 → " + calculateGrade(90));
+console.log("89 → " + calculateGrade(89));
+console.log("0 → " + calculateGrade(0));
+console.log("101 → " + calculateGrade(101));
+console.log("-5 → " + calculateGrade(-5));
+console.log("'hello' → " + calculateGrade("hello"));
+
+console.log("--- checkAccess ---");
+console.log("18, ticket → " + checkAccess(18, true));
+console.log("17, ticket → " + checkAccess(17, true));
+console.log("20, no ticket → " + checkAccess(20, false));
