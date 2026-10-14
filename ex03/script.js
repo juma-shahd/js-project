@@ -5,19 +5,31 @@ const countDisplay = document.getElementById("count");
 
 let count = 0;
 
+function updateDisplay() {
+    countDisplay.textContent = count;
+
+    if (count > 0) {
+        countDisplay.style.color = "green";
+    } else if (count < 0) {
+        countDisplay.style.color = "red";
+    } else {
+        countDisplay.style.color = "black";
+    }
+}
+
 function handleIncrement() {
     count++;
-    countDisplay.textContent = count;
+    updateDisplay();
 }
 
 function handleDecrement() {
     count--;
-    countDisplay.textContent = count;
+    updateDisplay();
 }
 
 function handleReset() {
     count = 0;
-    countDisplay.textContent = count;
+    updateDisplay();
 }
 
 incrementBtn.addEventListener("click", handleIncrement);
